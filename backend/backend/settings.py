@@ -21,11 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-l*!1ly9g#*+wj_9bhf!#5_d!b3^^947phs!79=i%c#y*076_wp'
+SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-l*!1ly9g#*+wj_9bhf!#5_d!b3^^947phs!79=i%c#y*076_wp')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,10 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 # Allow requests from React frontend
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React dev server Local host
-    "http://10.205.222.168:3000"  # network IP
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -138,6 +136,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'moizmohd0728@gmail.com'  # Replace with your Gmail
 EMAIL_HOST_PASSWORD = 'tpopdibrmsgkdylt'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -149,7 +148,7 @@ REST_FRAMEWORK = {
 #Certificates and Resume  upload settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
