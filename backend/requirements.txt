@@ -26,7 +26,6 @@ sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.3.0
 
-Django==4.2
 djangorestframework==3.14.0
 django-cors-headers==3.13.0
 gunicorn==21.2.0
