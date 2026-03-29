@@ -1,3 +1,4 @@
+
 asgiref==3.9.1
 certifi==2025.1.31
 charset-normalizer==3.4.1
@@ -24,3 +25,12 @@ six==1.17.0
 sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.3.0
+
+Django==4.2
+djangorestframework==3.14.0
+django-cors-headers==3.13.0
+gunicorn==21.2.0
+dj-database-url==2.1.0
+psycopg2-binary==2.9.10
+Pillow==10.0.0
+
